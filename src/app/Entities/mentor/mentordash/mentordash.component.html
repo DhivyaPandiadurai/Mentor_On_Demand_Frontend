@@ -2,6 +2,9 @@
     .whole{
         margin-top: -836px;
     }
+    table, th, td {
+  border: 1px solid black;
+}
     </style>
 
 <div class="whole">
@@ -9,10 +12,7 @@
     <button type="submit" (click)="add()">Edit Profile</button>
     <div *ngIf="addclick==1">
             <table class="table table-bordered">
-                    <tr>
-                        <td>ID</td>
-                        <td><input type="number" name="mentorid" id="" [(ngModel)]="item.mid"></td>
-                    </tr>
+                   
                     <tr>
                         <td>Ename</td>
                         <td><input type="text" name="mentorname" id="" [(ngModel)]="item.mname"></td>
@@ -87,7 +87,7 @@
                 {{items.skillId}}
               </td>
               <td>
-                {{items.startDate}}
+                {{items.startDate | date:"yyyy-MM-dd"}}
               </td>
               <td>
                 {{items.endDate}}
@@ -110,9 +110,9 @@
 </table>
 
 
-                        {{lists|json}}
+                        <!-- {{lists|json}} -->
                         </div>
-                        {{item|json}}
+                        <!-- {{item|json}} -->
 
 
 

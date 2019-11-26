@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
       }
       else if(data.message=='Admin')
       {
+        localStorage.setItem('token',data.token);
         this.router.navigate(['admindash'],{relativeTo:this._activatedRoute});
       }
       else

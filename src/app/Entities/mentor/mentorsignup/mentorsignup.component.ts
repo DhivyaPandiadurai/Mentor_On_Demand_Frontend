@@ -11,6 +11,8 @@ export class MentorsignupComponent implements OnInit {
   item:Mentor;
   list:Mentor[];
   msg:string;
+  router: any;
+  _activatedRoute: any;
     constructor(private _service:MentorService) {
       this.item=new Mentor();
       // this._service.GetAll().subscribe(k=>this.list=k);
@@ -22,6 +24,10 @@ export class MentorsignupComponent implements OnInit {
       this.item.active=true;
       this.item.Availability=true;
       this._service.Add(this.item).subscribe(k=>this.msg=k);
+     
+        // this.router.navigate(['login'],{relativeTo:this._activatedRoute});
+
+
     }
     // public Search(){
     //   this._service.Search(this.item.eid).subscribe(k=>this.item=k);
